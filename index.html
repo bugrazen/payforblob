@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayForBlob Tx</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl7/1L_dstPt3HV5HzF6Gvk/e3Ii2Qbl8dxv8K9CSf" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #ffffff;
+            font-family: Roboto, sans-serif;
+        }
+
+        .container {
+            max-width: 1000px;
+        }
+
+        h1, h2 {
+            color: #000000;
+        }
+
+        #hex-encoder-form {
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #server-response-output {
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 30px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        #output, #curl-output {
+            background-color: #ffffff;
+            border-radius: 20px;
+            white-space: pre-wrap;
+            overflow-y: auto;
+            max-height: 200px;
+            box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            padding: 20px;
+            width: 100%;
+        }
+
+
+        .btn {
+            background-color: #007bff;
+            border-color: #007bff;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+
+        .btn:active {
+            background-color: #0062cc;
+            border-color: #005cbf;
+            box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <h1 class="mb-4 text-center">Hex Encoder</h1>
+        <div id="hex-encoder-form">
+            <form>
+                <div class="mb-3">
+                    <label for="seed" class="form-label">Enter 16 digit seed value:</label>
+                    <input type="text" class="form-control" id="seed" name="seed" required minlength="16" maxlength="16">
+                </div>
+                <button type="submit" class="btn btn-primary">Run</button>
+            </form>
+        </div>
+        <div id="result" class="mt-5" style="display: none;">
+            <h2 class="mb-3">Result</h2>
+            <pre id="output" class="border p-3" style="background-color: #ffffff;"></pre>
+        </div>
+        <div id="curl-result" class="mt-5" style="display: none;">
+            <pre id="curl-output" class="border p-3" style="display: none;"></pre>
+            <button id="run-curl-btn" class="btn btn-primary">Run Command on Server</button>
+        </div>
+        <div id="server-response" class="mt-5" style="display: none;">
+            <h2 class="mb-3">Server Response</h2>
+            <pre id="server-response-output" class="border p-3" style="background-color: #ffffff;"></pre>
+        </div>
+    </div>
+    <script>
+    $("form").on("submit", function (event) {
+        event.preventDefault();
+        const seed = $("#seed").val();
+        $.get("/?seed=" + seed, function (data) {
+            const [namespaceID, message] = data.split("\n\n");
+            $("#output").text(data);
+            $("#result").show();
+
+            const curlCommand = `curl -X POST -d '{"namespace_id": "${namespaceID.split(': ')[1]}", "data": "${message.split(': ')[1]}", "gas_limit": 99999, "fee": 2305}' http://localhost:26659/submit_pfb`;
+            $("#curl-output").text(curlCommand);
+            $("#curl-result").show();
+        }).fail(function (error) {
+            alert("Error: " + error.responseText);
+        });
+    });
+
+
+    $("#run-curl-btn").on("click", function () {
+    const curlOutputText = $("#curl-output").text();
+    $.ajax({
+        type: "POST",
+        url: "http://24.133.220.66:8088/run-curl",
+        data: JSON.stringify({ "curl_command": curlOutputText }),
+        contentType: "application/json; charset=utf-8",
+        dataType: "text",
+        success: function (data) {
+            const heightMatch = data.match(/"height":\s*(\d+)/);
+            const txhashMatch = data.match(/"txhash":\s*"([0-9a-fA-F]+)"/);
+
+            if (heightMatch && txhashMatch) {
+                const height = heightMatch[1];
+                const txhash = txhashMatch[1];
+                const explorerURLHeight = `https://testnet.mintscan.io/celestia-incentivized-testnet/blocks/${height}`;
+                const explorerURLTxhash = `https://testnet.mintscan.io/celestia-incentivized-testnet/txs/${txhash}`;
+
+                $("#server-response-output").html(`<b>Height</b>: <a href="${explorerURLHeight}" target="_blank">${height}</a><br><b>TxHash</b>: <a href="${explorerURLTxhash}" target="_blank">${txhash}</a>`);
+            } else {
+                $("#server-response-output").text("Error: Could not extract height and txhash from the server response.");
+            }
+
+            $("#server-response").show();
+        },
+        error: function (error) {
+            $("#server-response-output").text("Error running curl command on server: " + error.responseText);
+            $("#server-response").show();
+        }
+    });
+});
+</script>
+</body>
+</html>
