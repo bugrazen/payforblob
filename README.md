@@ -19,5 +19,22 @@ http://payforblob.online:8088
 
 ---
 
-<b>2. Enter 16 digit seed value</b>
+<b>2. Enter 16 digit seed value and create "namespace id" by 'Run' button</b>
 ![22](https://github.com/bugrazen/payforblob/assets/95212909/5d545f86-e627-4196-861d-8f595f5c1e8d)
+
+---
+
+<b>3. Submitting PayForBlob txs by 'Run Command on Server' button</b>
+![33](https://github.com/bugrazen/payforblob/assets/95212909/b38c78b0-1771-4a3d-8710-08006475df2e)
+
+---
+
+<b>4. You can view the "Block Details" on mintscan.io by clicking on the block number</b>
+![44](https://github.com/bugrazen/payforblob/assets/95212909/a25ce64b-0ee3-4cfc-8398-cb50fbc1d3a6)
+
+![55](https://github.com/bugrazen/payforblob/assets/95212909/bccaef55-5d93-4ec5-a4f6-6392516f50bc)
+
+---
+
+<b>5. You can view the "Transaction Details" on mintscan.io by clicking on the txs number</b>
+![66](https://github.com/bugrazen/payforblob/assets/95212909/d14762d9-70c3-4f2d-93a7-a40b5badd1d5)
