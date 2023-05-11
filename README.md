@@ -14,7 +14,6 @@
 
 <b>1. Enter site</b>
 
-http://payforblob.online:8088
 ![11](https://github.com/bugrazen/payforblob/assets/95212909/3893a331-68f7-42ed-ab57-404e6a894310)
 
 ---
