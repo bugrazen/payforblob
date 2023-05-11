@@ -28,12 +28,12 @@
 
 ---
 
-<b>4. You can view the "Block Details" on mintscan.io by clicking on the block number</b>
+<b>4. You can view the "Block Details" on mintscan.io by clicking on the **Block Number**</b>
 ![44](https://github.com/bugrazen/payforblob/assets/95212909/a25ce64b-0ee3-4cfc-8398-cb50fbc1d3a6)
 
 ![55](https://github.com/bugrazen/payforblob/assets/95212909/bccaef55-5d93-4ec5-a4f6-6392516f50bc)
 
 ---
 
-<b>5. You can view the "Transaction Details" on mintscan.io by clicking on the txs number</b>
+<b>5. You can view the "Transaction Details" on mintscan.io by clicking on the TxHash</b>
 ![66](https://github.com/bugrazen/payforblob/assets/95212909/d14762d9-70c3-4f2d-93a7-a40b5badd1d5)
