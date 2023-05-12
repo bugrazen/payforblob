@@ -1,12 +1,12 @@
 # UI for submitting PayForBlob txs 
 
-![blockspace_race-6e53d950ad39038465239aa7da236980](https://github.com/bugrazen/payforblob/assets/95212909/943a730e-58a8-4581-b90b-73e2b5fc9955)
+![blockspace_race-6e53d950ad39038465239aa7da236980](https://github.com/bugrazen/payforblob/assets/95212909/8583709a-6983-4159-8988-0bb8d255383e)
 
 ---
 
 |  | |
 |-----------|-------------|
-| ![pfb](https://github.com/bugrazen/payforblob/assets/95212909/dfe43b44-a9b2-4e22-8e78-57e9a66ab30d) |[Click to do the **PayForBlob txs** in the Blocspace race network.](http://www.payforblob.online:8088) |
+| ![payforblob](https://github.com/bugrazen/payforblob/assets/95212909/3d2799b7-a274-409b-b686-9cc169b4243d) |[Click to do the **PayForBlob txs** in the Blocspace race network.](http://www.payforblob.online:8088) |
 
 ---
 
@@ -32,11 +32,14 @@
 ---
 
 <b>4. You can view the "Block Details" on mintscan.io by clicking on the **Block Number**</b>
-![44](https://github.com/bugrazen/payforblob/assets/95212909/a25ce64b-0ee3-4cfc-8398-cb50fbc1d3a6)
+![44](https://github.com/bugrazen/payforblob/assets/95212909/bf34cd0b-92f2-4fa8-b310-ff39a192f5e0)
 
-![55](https://github.com/bugrazen/payforblob/assets/95212909/bccaef55-5d93-4ec5-a4f6-6392516f50bc)
+
+![55](https://github.com/bugrazen/payforblob/assets/95212909/5b8f298d-f797-44c3-9ac7-ce44ae757540)
+
 
 ---
 
 <b>5. You can view the "Transaction Details" on mintscan.io by clicking on the TxHash</b>
-![66](https://github.com/bugrazen/payforblob/assets/95212909/d14762d9-70c3-4f2d-93a7-a40b5badd1d5)
+![66](https://github.com/bugrazen/payforblob/assets/95212909/0442dd10-025a-48a0-a047-29c7f6ce49a1)
+
