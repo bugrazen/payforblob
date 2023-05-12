@@ -14,13 +14,15 @@
 
 <b>1. Enter site</b>
 
-![11](https://github.com/bugrazen/payforblob/assets/95212909/ca9e4bfc-259c-47d6-a7e1-7347c09f27b1)
+![11](https://github.com/bugrazen/payforblob/assets/95212909/71e304f3-09af-48dd-94e0-3b9e2db834bb)
+
 
 
 ---
 
-<b>2. Enter 16 digit seed value and create "namespace id" by 'Run' button</b>
-![22](https://github.com/bugrazen/payforblob/assets/95212909/1f03c386-34b8-41f7-9e51-c19945b0d4b2)
+<b>2. Enter digit seed value and create "namespace id" by 'Run' button</b>
+![22](https://github.com/bugrazen/payforblob/assets/95212909/e5840fbb-02d6-47f6-8952-01ab8b0d51ef)
+
 
 
 ---
