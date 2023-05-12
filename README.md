@@ -14,17 +14,20 @@
 
 <b>1. Enter site</b>
 
-![11](https://github.com/bugrazen/payforblob/assets/95212909/3893a331-68f7-42ed-ab57-404e6a894310)
+![11](https://github.com/bugrazen/payforblob/assets/95212909/ca9e4bfc-259c-47d6-a7e1-7347c09f27b1)
+
 
 ---
 
 <b>2. Enter 16 digit seed value and create "namespace id" by 'Run' button</b>
-![22](https://github.com/bugrazen/payforblob/assets/95212909/5d545f86-e627-4196-861d-8f595f5c1e8d)
+![22](https://github.com/bugrazen/payforblob/assets/95212909/1f03c386-34b8-41f7-9e51-c19945b0d4b2)
+
 
 ---
 
 <b>3. Submitting PayForBlob txs by 'Run Command on Server' button</b>
-![33](https://github.com/bugrazen/payforblob/assets/95212909/b38c78b0-1771-4a3d-8710-08006475df2e)
+![33](https://github.com/bugrazen/payforblob/assets/95212909/c4959c63-716b-41a6-8a78-1e7c023b4991)
+
 
 ---
 
