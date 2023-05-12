@@ -28,7 +28,8 @@
 ---
 
 <b>3. Submitting PayForBlob txs by 'Run Command on Server' button</b>
-![33](https://github.com/bugrazen/payforblob/assets/95212909/c4959c63-716b-41a6-8a78-1e7c023b4991)
+![33](https://github.com/bugrazen/payforblob/assets/95212909/638821d5-2a6d-47be-9e42-b2c9ba9019dd)
+
 
 
 ---
