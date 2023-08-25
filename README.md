@@ -16,8 +16,6 @@
 
 ![11](https://github.com/bugrazen/payforblob/assets/95212909/71e304f3-09af-48dd-94e0-3b9e2db834bb)
 
-
-
 ---
 
 <b>2. Enter digit seed value and create "namespace id" by 'Run' button</b>
